@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "name": "Pintu",
+      "email": "pintu0313@outlook.com",
+      "password": {
+        "salt": "3371e15b4929949f",
+        "hash": "7c3e6c7b09215c5c528f314053df16cb9346b52ea6e8b860c9bd3c6fd0859bb1"
+      }
+    },
+    {
+      "name": "Vrutik",
+      "email": "vrutikbhoir@outlook.comm",
+      "password": {
+        "salt": "601de081233f0db9",
+        "hash": "0d9c68012a3aa9924ae1328a843c15844f60f4c2344e27fa6f755bfae2552427"
+      }
+    },
+    {
+      "name": "pintu",
+      "email": "pintubhoir@gmail.com",
+      "password": {
+        "salt": "fa6db3281714d408",
+        "hash": "64efd7a535799fc7b7dd571c30c7114d52954cc5e5391638d20b18d9550d8889"
+      }
+    },
+    {
+      "name": "Vrutik",
+      "email": "pintubhoir@outlook.com",
+      "password": {
+        "salt": "b466d0358a236b55",
+        "hash": "fd589868edc5fe8878d9789bf9a4d0d0f4d6659c30da2d339e28c1cb6a0e15ca"
+      }
+    },
+    {
+      "name": "vrydff",
+      "email": "vrutikbhoir@utlook.com",
+      "password": {
+        "salt": "a4852be208ba1812",
+        "hash": "b82236f8fe523bd82da652551ca27ff2bbb48bed55c67fc4b3e2a3d4567bcf7f"
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+# Next.js
+frontend/.next/
+
+# ML Models
+*.pkl
+backend/app/services/ml/models/
+backend/app/services/ml/models/narrative_engine_final.pkl
+
+
+# Node
+node_modules/
+
+# Python
+__pycache__/
+*.pyc
+.env
+venv/

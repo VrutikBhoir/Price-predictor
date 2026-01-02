@@ -1,0 +1,415 @@
+/* -----------------------------------------
+    GLOBAL THEME — DARK PREMIUM UI
+----------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    background: #0d0d0d;
+    color: #e5e5e5;
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    min-height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Smooth transitions everywhere */
+* {
+    transition: 0.25s ease;
+}
+
+/* Selection color */
+::selection {
+    background: #0ea5e9;
+    color: #fff;
+}
+
+/* -----------------------------------------
+    SCROLLBAR STYLING
+----------------------------------------- */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #111;
+}
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #0ea5e9;
+}
+
+/* -----------------------------------------
+    NAVBAR AREA
+----------------------------------------- */
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 28px;
+    background: #111;
+    border-bottom: 1px solid #222;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-logo a {
+    font-size: 20px;
+    color: #0ea5e9;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    gap: 22px;
+    align-items: center; /* Ensures profile/action items align vertically */
+}
+
+.nav-link {
+    font-size: 15px;
+    color: #cfcfcf;
+    padding: 6px 2px;
+}
+
+.nav-link:hover {
+    color: #0ea5e9;
+}
+
+.nav-link.active {
+    color: #0ea5e9;
+    border-bottom: 2px solid #0ea5e9;
+    font-weight: 600;
+}
+
+/* --- ADDED: USER/PROFILE DROPDOWN STYLES --- */
+.nav-profile {
+    position: relative;
+    cursor: pointer;
+    margin-left: 10px; /* Space from other links */
+}
+
+.nav-profile-img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid transparent;
+}
+
+.nav-profile:hover .nav-profile-img {
+    border-color: #0ea5e9;
+}
+
+.nav-dropdown {
+    position: absolute;
+    top: 45px;
+    right: 0;
+    width: 180px;
+    background: #1a1a1a; /* Slightly different background for visual depth */
+    border: 1px solid #222;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    z-index: 1010;
+    display: none; /* Controlled by JS */
+    overflow: hidden;
+}
+
+.nav-profile.open .nav-dropdown {
+    display: block; /* Shown when 'open' class is applied */
+}
+
+.dropdown-item {
+    padding: 12px 16px;
+    font-size: 14px;
+    color: #cfcfcf;
+}
+
+.dropdown-item:hover {
+    background: #222;
+    color: #0ea5e9;
+}
+
+/* --- MOBILE MENU STYLES --- */
+
+/* Mobile Menu Icon */
+.nav-menu-icon {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+    color: #fff; /* Ensure it's visible */
+}
+
+.nav-menu-icon:hover {
+    color: #0ea5e9; /* Added hover effect */
+}
+
+.mobile-menu {
+    /* Changed position to fixed to cover entire screen width when open */
+    position: fixed; 
+    top: 60px; /* Below the navbar */
+    right: 0;
+    width: 250px; /* Slightly wider mobile menu */
+    background: #111;
+    border-left: 1px solid #222;
+    flex-direction: column;
+    padding: 12px 0;
+    display: none; /* Hidden by default */
+    transform: translateX(100%); /* Start off-screen */
+    transition: transform 0.3s ease-out;
+    height: calc(100% - 60px); /* Fill remaining viewport height */
+    z-index: 999;
+}
+
+/* ADDED: Mobile Menu open state */
+.mobile-menu.open {
+    display: flex;
+    transform: translateX(0); /* Slide into view */
+}
+
+.mobile-link {
+    padding: 14px 20px;
+    color: #cfcfcf;
+    border-bottom: 1px solid #1a1a1a; /* Subtle separation */
+}
+
+.mobile-link:hover {
+    background: #1a1a1a;
+    color: #0ea5e9;
+}
+
+.mobile-link.active {
+    color: #0ea5e9;
+    font-weight: 600;
+}
+
+/* Responsive Navbar */
+@media (max-width: 900px) {
+    .nav-links {
+        display: none;
+    }
+    .nav-menu-icon {
+        display: block;
+    }
+    /* ADDED: Hide action button/profile items if they are complex */
+    .nav-links .btn { 
+        display: none; 
+    }
+}
+
+/* -----------------------------------------
+    PAGE LAYOUT
+----------------------------------------- */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 45px 30px;
+}
+
+.page-title {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #0ea5e9;
+}
+
+/* -----------------------------------------
+    CARD COMPONENT
+----------------------------------------- */
+
+.card {
+    background: #111;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #222;
+    box-shadow: 0px 0px 8px #00000040;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: #0ea5e9;
+    /* Added transition to border-color for smooth hover */
+    transition: transform 0.3s ease, border-color 0.3s ease; 
+}
+
+/* -----------------------------------------
+    GRID SYSTEM (For dashboard cards)
+----------------------------------------- */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+}
+
+/* -----------------------------------------
+    BUTTONS
+----------------------------------------- */
+
+.btn {
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: .5px;
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Enhanced transition */
+}
+
+.btn-primary {
+    background: #0ea5e9;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: #38bdf8;
+    box-shadow: 0 4px 10px rgba(14, 165, 233, 0.4); /* Added subtle shadow */
+}
+
+.btn-outline {
+    border: 1px solid #444;
+    background: transparent;
+    color: #ddd;
+}
+
+.btn-outline:hover {
+    border-color: #0ea5e9;
+    color: #0ea5e9;
+    background: rgba(14, 165, 233, 0.05); /* Subtle background on hover */
+}
+
+/* -----------------------------------------
+    INPUT FIELDS
+----------------------------------------- */
+
+.input {
+    width: 100%;
+    background: #111;
+    border: 1px solid #222;
+    padding: 12px;
+    border-radius: 8px;
+    color: #eee;
+    font-size: 15px;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #0ea5e9;
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.3); /* Focus ring */
+}
+
+/* -----------------------------------------
+    TABLES (For Screener Page)
+----------------------------------------- */
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #111;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table th {
+    text-align: left;
+    padding: 14px;
+    background: #0ea5e9;
+    color: #fff;
+    font-weight: 600;
+}
+
+.table td {
+    padding: 12px;
+    border-bottom: 1px solid #222;
+}
+
+.table tr:hover td {
+    background: #1a1a1a;
+}
+
+/* -----------------------------------------
+    CHART AREA
+----------------------------------------- */
+
+.chart-box {
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 12px;
+    padding: 20px;
+    overflow: hidden;
+}
+
+/* -----------------------------------------
+    MODAL POPUP
+----------------------------------------- */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #00000080;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    /* Added blur effect for premium look */
+    backdrop-filter: blur(4px); 
+}
+
+.modal-content {
+    background: #111;
+    padding: 28px;
+    width: 450px;
+    border-radius: 12px;
+    border: 1px solid #222;
+    transform: scale(1); /* Reset from potential animation */
+    transition: transform 0.3s ease-out;
+}
+
+.modal h2 {
+    margin-bottom: 15px;
+}
+
+/* -----------------------------------------
+    ANIMATIONS
+----------------------------------------- */
+
+.fade-in {
+    animation: fadeIn .5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.scale-on-hover:hover {
+    transform: scale(1.03);
+}
+
+/* -----------------------------------------
+    FOOTER (Optional)
+----------------------------------------- */
+
+.footer {
+    margin-top: 60px;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #222;
+    color: #888;
+}
