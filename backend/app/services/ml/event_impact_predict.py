@@ -150,10 +150,10 @@ def main():
             })
             return
         
-        if len(event_text) < 5:
+        if len(event_text) <10:
             safe_print({
                 "ok": False,
-                "error": "Event description too short (minimum 5 characters)"
+                "error": "Event description too short (minimum 10 characters only)"
             })
             return
         
