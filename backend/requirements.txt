@@ -8,3 +8,4 @@ pydantic
 supabase
 python-dotenv
 email-validator
+scikit-learn>=1.6.1

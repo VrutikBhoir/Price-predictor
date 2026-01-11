@@ -2,11 +2,12 @@ import os
 import joblib
 import numpy as np
 
+
 # ============================================
 #  Load ML Models
 # ============================================
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-MODEL_DIR = os.path.join(BASE_DIR, "..", "..", "models")
+MODEL_DIR = os.path.join(BASE_DIR, "models")
 
 risk_model_path = os.path.join(MODEL_DIR, "risk_model.pkl")
 action_model_path = os.path.join(MODEL_DIR, "action_model.pkl")

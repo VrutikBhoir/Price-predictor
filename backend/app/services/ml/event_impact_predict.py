@@ -4,7 +4,7 @@ import os
 import pickle
 import traceback
 from datetime import datetime
-# ✅ FastAPI entry function (REQUIRED)
+# FastAPI entry function (REQUIRED)
 def predict_event_impact(stock: str, event_text: str):
     """
     FastAPI-compatible function

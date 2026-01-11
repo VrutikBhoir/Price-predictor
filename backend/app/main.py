@@ -33,6 +33,8 @@ from app.services.ml.event_impact_predict import predict_event
 from app.services.ml.risk_predictor import predict_risk, predict_action, predict_full
 from app.services.ml.narrative_engine import generate_narrative
 from app.db import supabase
+from .config import get_settings
+from .utils import RateLimiter, cache_manager
 
 
 # Configure structured logging
@@ -288,6 +290,8 @@ class PredictionResponse(BaseModel):
     volatility: float
     confidence_score: float
     forecast: list
+    historical: list
+    indicators: dict = {}
     accuracy_metrics: Optional[dict] = None
 
 
