@@ -12,8 +12,13 @@ MODEL_DIR = os.path.join(BASE_DIR, "models")
 risk_model_path = os.path.join(MODEL_DIR, "risk_model.pkl")
 action_model_path = os.path.join(MODEL_DIR, "action_model.pkl")
 
-risk_model = joblib.load(risk_model_path)
-action_model = joblib.load(action_model_path)
+try:
+    risk_model = joblib.load(risk_model_path)
+    action_model = joblib.load(action_model_path)
+except Exception as e:
+    print(f"Warning: Could not load risk models: {e}")
+    risk_model = None
+    action_model = None
 
 # The 7 features generated during training
 FEATURES = ["close", "ret", "vol5", "sma5", "sma15", "above_sma15", "mom5"]

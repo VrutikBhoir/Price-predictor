@@ -8,10 +8,10 @@
     "start": "next start -p 3000"
   },
   "dependencies": {
-    "@clerk/nextjs": "^6.37.2",
+    "@clerk/nextjs": "^6.37.3",
     "@splinetool/react-spline": "^4.1.0",
     "apexcharts": "^5.3.6",
-    "axios": "^1.7.2",
+    "axios": "^1.13.5",
     "date-fns": "^3.6.0",
     "framer-motion": "^12.33.0",
     "next": "^16.1.0",
